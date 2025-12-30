@@ -101,10 +101,17 @@ sudo reboot
 
 ## 8. Stress Test
 
+Open **two terminals**.
+
+**Terminal 1 – Watch temperatures**
+```bash
+watch -n 1 sensors
+```
+
+**Terminal 2 – Run stress test**
 ```bash
 sudo apt install -y stress-ng lm-sensors
 sudo sensors-detect
-watch -n 1 sensors
 stress-ng --cpu 8 --vm 4 --vm-bytes 90% --timeout 10m
 ```
 
