@@ -2,6 +2,8 @@
 
 This document explains how we permanently fixed random reboots, thermal crashes, and ACPI firmware faults on the **ASUS ROG Zephyrus G14 GA401QH** running Ubuntu Linux.
 
+The root cause was a firmware thermal + IOMMU defect that causes hard system resets when CPU temperature exceeds ~88–90°C. The steps below force Linux to fully own the thermal loop and disable the broken hardware paths.
+
 ---
 
 ## Install Rust (Required)
